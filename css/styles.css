@@ -29,7 +29,6 @@ TABLE OF CONTENTS
 html {
   box-sizing: border-box;
 }
-
 *,
 *:before,
 *:after {
@@ -40,6 +39,19 @@ html {
     box-sizing: border-box;
 }
 
+.column {
+    float: left;
+    width: 50%;
+    padding: 5px;
+}
+
+/* Clearfix (clear floats)*/
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+  text-decoration: none;
 
 body {
   color: black;
