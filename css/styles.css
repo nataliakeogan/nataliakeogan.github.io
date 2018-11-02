@@ -188,22 +188,14 @@ figcaption {
   padding: 2px 2px;
 }
 
-/* Two images side by side (50% for two) */
-.column {
-  float: left;
-  width: 50%;
-  padding: 5px;
-}
-
-.row {
+/*div container for the 3 images and captions, using the class .img-wrapper*/
+.img-wrapper {
   display: flex;
+  flex-direction: row; /*align in the same row*/
+  justify-content: space-between;
 }
 
-.column {
-  flex: 50%;
-  padding: 5px;
-}
-
+.img-wrapper figure {width: 200px;}/*give the caption text a width of 200 px to make sure is the same width of the image*/
 
 /* Blockquotes */
 
