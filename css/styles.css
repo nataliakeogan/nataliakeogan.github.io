@@ -24,25 +24,23 @@ TABLE OF CONTENTS
 *******************************************************
 ******************************************************/
 
-/*Make everything inside the <html> act as a block.
-box-sizing: used to tell the browser what the sizing properties (width and height) should include.
-border-box: The width and height properties (and min/max properties) includes content, padding and border, but not the margin */
+/*Make everything inside the <html> act as a block.*/
 
 html {
   box-sizing: border-box;
 }
 
-/* The asterisk * used below means wildcard or affect everything.
-box-sizing: inherit, means inherit the property border-box from its parent element html.
-Check what the pseudo elements :before and :after are for https://www.w3schools.com/CSS/css_pseudo_elements.asp */
 *,
 *:before,
 *:after {
   box-sizing: inherit;
 }
 
-/*rules for all the body text
-you can give specific text elements their own rules by adding a selector { property: value;} When you do, you override this global rule*/
+{
+    box-sizing: border-box;
+}
+
+
 body {
   color: black;
   background-color: white;
@@ -67,18 +65,12 @@ text-decoration: none;
 
 /* Header */
 header {
-  background-color: #478966; /*greenlavender*/
-  /* If you wanted you could add a
-	background-image. For this you can type, before background-color the property and value
-	background-image:url("insert here th url of the image");  */
-  background-size: cover; /* Means cover the entire element. Examples
-https://www.w3schools.com/cssref/playit.asp?filename=playcss_background-size&preval=cover */
+  background-color: #478966; /*green*/
   color: #ffffff;
   text-align: center; /* align all text inside header to the center*/
 }
 
 /*header h1 story title*/
-
 
 h1 {
   font-family: 'Open Sans', sans-serif;
@@ -90,7 +82,7 @@ h1 {
 
 /*header h2 lead*/
 h2 {
-  font-family: 'Krub', sans-serif;/*exception: the lead must use Noto serif instead of Roboto*/
+  font-family: 'Krub', sans-serif;
   font-size: 24px;
   font-weight: 400;
   line-height: 1.3;
@@ -119,13 +111,6 @@ h2 {
   text-decoration-style: wavy;
 }
 
-/* Wondering what a bunch of selectors are doing together?
-Selectors can be combined and will behave according to the syntaxis you used to combine them.
-#author a means	select all <a> elements inside id bylyne elements that are inside the <header> element
-#author a:hover means select all <a:hover> elements inside byline elements that are inside the <header> element
-A easy rule: the selector at the far right is the one that will be activated.
-Here is a list with examples: https://www.w3schools.com/cssref/css_selectors.asp */
-
 /* Navigation styles */
 nav {
   text-align: center;
@@ -133,27 +118,14 @@ nav {
   /* Top, right, bottom, left */
   width: 100%;/*Make navigation 100% width of the viewport*/
   background: black;}
-  /* I used RGBA or Red Green Blue Alpha instead of hexadecimal.
-    In RGBA the Alpha parameter is a number between 0.0 (fully transparent) and 1.0 (fully opaque).
-    This means you can chosse transparency / opacity. Info: https://www.w3schools.com/css/css3_colors.asp
-    Use this calculator to go from turn a hexadecimal color into a rgba color: http://hex2rgba.devoth.com/
 
 /*Nav list of links aligned horizontal*/
 li {
   display: inline;
-  /* Display: Every HTML element has a default value for display.
-    Usually it's either "block" or "inline".
-    Block: Elements like headings, paragraphs and list items display "block" by default,
-    which means they strecth the whole width of the page and have line breaks before and after.
-    Inline: Links like the <a> tag and a few others display "inline" by default, wich means they
-    exist within the normal flow of the text they are contained within. No line breaks and no
-    taking the whole wide page.
-    Info: http://marksheet.io/html-block-inline.html
-    Examples: https://www.w3schools.com/css/css_display_visibility.asp */
+
   padding: 0px 10px 0px 10px;
   /*top right bottom left or give it 0px of top space, 10 px to
-    the right, 0px to the bottom and 10px to the left. To remember it, this rule is also called
-    TRouBLE or TRBL for Top Right Bottom Left*/
+    the right, 0px to the bottom and 10px to the left.
 }
 
 /*links in nav menu*/
@@ -180,10 +152,7 @@ article {
   max-width: 700px;/*set the width of the text and other elements inside the article tag*/
   padding: 20px;/*give it padding all around*/
   margin: auto;
-  /* set the margin property to auto to horizontally center the element
-  within its container. If you do margin: 0 auto that means:
-  top and bottom give it a margin 0, and the left and right margin auto.
-  More: https://css-tricks.com/forums/topic/why-or-how-does-margin0-auto-work/ */
+
 }
 
 
@@ -219,22 +188,28 @@ figcaption {
   padding: 2px 2px;
 }
 
-/*div container for the 2 images and captions, using the class .img-wrapper*/
-.img-wrapper {
-  display: flex;
-  flex-direction: row; /*align in the same row*/
-  justify-content: space-between;
+/* Two images side by side (50% for two) */
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
 }
 
-.img-wrapper figure { width: 348px; }/*give the caption text a width of 200 px to make sure is the same width of the image*/
+.row {
+  display: flex;
+}
 
+.column {
+  flex: 50%;
+  padding: 5px;
+}
 
 
 /* Blockquotes */
 
 blockquote {
-  border-top: 6px solid #478966;/*orange top border line of 6px*/
-  border-bottom: 2px solid #478966;/*orange bottom border line of 2px*/
+  border-top: 6px solid #478966;/*green top border line of 6px*/
+  border-bottom: 2px solid #478966;/*green bottom border line of 2px*/
   color: #000000;
   font-family: 'Open Sans', sans-serif;
   font-size: 24px;
@@ -266,6 +241,5 @@ footer {
 footer ul li {
   display: inline;
   /*top right bottom left or give it 0px of top space, 10 px to
-    the right, 0px to the bottom and 10px to the left. To remember it, this rule is also called
-    TRouBLE or TRBL for Top Right Bottom Left*/
+    the right, 0px to the bottom and 10px to the left.*/
 }
