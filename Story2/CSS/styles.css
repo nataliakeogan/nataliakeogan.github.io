@@ -83,8 +83,8 @@ h2 {
 
 /*a:hover byline link on hover*/
 #author a:hover {
-  color: #9b2222
-  text-decoration: underline;
+  color: #fcd032;
+  text-decoration: : underline;
   text-decoration-style: wavy;
 }
 
