@@ -2,16 +2,12 @@
 FONTS
 
 Sans-serif / serif combination
-font-family: 'Noto Serif', serif; 400
-font-family: 'Roboto', sans-serif; 700, 400
+font-family: 'Open Sans', sans-serif; 400, 700
+font-family: 'Krub', sans-serif; 400
 
 Pairings, weights and sizes
-- Header h1 (title): Roboto, sans-serif; font-size: 56px; font-weight: 700; line-height: 1.3;
-- Header h2 (summary): 'Noto serif', serif; font-size: 32px; font-weight: 700; line-height: 1.3;
-- Header h3 (byline): Roboto, sans-serif; font-size: 18px; font-weight: 400;
-- Body text: 'Noto serif', serif; font-size: 16px; font-weight: 400; line-height: 1.5;
-- Blockquotes: Roboto, sans-serif; font-size: 24px; font-weight: inherit; line-height: inherit;
-- Figcaptions: Roboto, sans-serif; font-size: inherits; font-weight: inherit; line-height: 1.1;
+- h1, h2, h3, blockquote, figcaption: 'Open Sans', sans-serif
+- body 'Krub', sans-serif;
 ********************************************/
 
 /******************************************************
@@ -21,9 +17,7 @@ TABLE OF CONTENTS
 3. Main body Content (headings, images and figures, blockquotes)
 4. Twitter embed codes
 5. Footer Content
-6. Media Queries
 ******************************************************/
-
 
 /******************************************************
 *******************************************************
@@ -32,9 +26,6 @@ TABLE OF CONTENTS
 *******************************************************
 ******************************************************/
 
-/*Make everything inside the <html> act as a block.
-box-sizing: used to tell the browser what the sizing properties (width and height) should include.
-border-box: The width and height properties (and min/max properties) includes content, padding and border, but not the margin */
 
 html {
   box-sizing: border-box;
@@ -52,7 +43,7 @@ Check what the pseudo elements :before and :after are for https://www.w3schools.
 /*rules for all the body text
 you can give specific text elements their own rules by adding a selector { property: value;} When you do, you override this global rule*/
 body {
-  font-family: 'Noto serif', serif; /* font */
+  font-family: 'Krub', sans-serif; /* font */
   font-size: 16px; /* 16px is the standard font size */
   line-height: 1.5; /* 1.5 times the size of the font */
 }
@@ -65,14 +56,10 @@ body {
 
 /* Header */
 header {
-  background-color: #ff6600; /*orange*/
-  /* If you wanted you could add a
-	background-image. For this you can type, before background-color the property and value
-	background-image:url("insert here th url of the image");  */
-  background-size: cover; /* Means cover the entire element. Examples
-https://www.w3schools.com/cssref/playit.asp?filename=playcss_background-size&preval=cover */
+  background-color: #478966; /*green*/
+  background-size: cover;
   color: #ffffff;
-  font-family: Roboto, sans-serif;/*use Roboto for everything inside header*/
+  font-family: 'Open Sans', sans-serif;
   text-align: center;/* align all text inside header to the center*/
 }
 
@@ -86,7 +73,7 @@ https://www.w3schools.com/cssref/playit.asp?filename=playcss_background-size&pre
 
 /*header h2 lead*/
 .summary {
-  font-family: 'Noto serif', serif;/*exception: the lead must use Noto serif instead of Roboto*/
+  font-family: 'Krub', sans-serif;
   font-size: 24px;
   font-weight: 400;
   line-height: 1.3;
@@ -103,7 +90,7 @@ https://www.w3schools.com/cssref/playit.asp?filename=playcss_background-size&pre
 
 /*header h3 a byline link*/
 #author a {
-  color: #000000;/*black*/
+  color: #ffffff;/*white*/
 }
 
 
@@ -127,23 +114,11 @@ nav {
   /* Top, right, bottom, left */
   width: 100%;/*Make navigation 100% width of the viewport*/
   background: rgba(0, 0, 0, 1);}
-  /* I used RGBA or Red Green Blue Alpha instead of hexadecimal.
-    In RGBA the Alpha parameter is a number between 0.0 (fully transparent) and 1.0 (fully opaque).
-    This means you can chosse transparency / opacity. Info: https://www.w3schools.com/css/css3_colors.asp
-    Use this calculator to go from turn a hexadecimal color into a rgba color: http://hex2rgba.devoth.com/
+
 
 /*Nav list of links aligned horizontal*/
 li {
   display: inline;
-  /* Display: Every HTML element has a default value for display.
-    Usually it's either "block" or "inline".
-    Block: Elements like headings, paragraphs and list items display "block" by default,
-    which means they strecth the whole width of the page and have line breaks before and after.
-    Inline: Links like the <a> tag and a few others display "inline" by default, wich means they
-    exist within the normal flow of the text they are contained within. No line breaks and no
-    taking the whole wide page.
-    Info: http://marksheet.io/html-block-inline.html
-    Examples: https://www.w3schools.com/css/css_display_visibility.asp */
   padding: 0px 10px 0px 10px;
   /*top right bottom left or give it 0px of top space, 10 px to
     the right, 0px to the bottom and 10px to the left. To remember it, this rule is also called
@@ -153,7 +128,7 @@ li {
 /*links in nav menu*/
 nav ul li a {
   color: #ffffff;/*white*/
-  font-family: Roboto, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   font-weight: 400;
   text-decoration: none;
@@ -161,7 +136,8 @@ nav ul li a {
 }
 
 /*links in nav on hover*/
-nav ul li a:hover {text-decoration: underline;}
+nav ul li a:hover {text-decoration: underline;
+}
 
 
 /******************************************************
@@ -174,16 +150,12 @@ article {
   max-width: 700px;/*set the width of the text and other elements inside the article tag*/
   padding: 20px;/*give it padding all around*/
   margin: auto;
-  /* set the margin property to auto to horizontally center the element
-  within its container. If you do margin: 0 auto that means:
-  top and bottom give it a margin 0, and the left and right margin auto.
-  More: https://css-tricks.com/forums/topic/why-or-how-does-margin0-auto-work/ */
 }
 
 /* Body headings */
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: Roboto, sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	font-weight: 400;
 	color: #000000;/*black*/}
 
@@ -208,7 +180,7 @@ img {
 /*figcaption inherits font size from global styles*/
 figcaption {
   text-align: center;
-  font-family: Roboto, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   line-height: 1.1;
   padding: 2px 2px;
@@ -226,7 +198,7 @@ figcaption {
 /* Links in body */
 
 a {
-  color: #ff6600;/*orange*/
+  color: #478966;/*green*/
   text-decoration: none;
 }
 
@@ -239,10 +211,10 @@ a:hover {
 /* Blockquotes */
 
 blockquote {
-  border-top: 6px solid #ff6600;/*orange top border line of 6px*/
-  border-bottom: 2px solid #ff6600;/*orange bottom border line of 2px*/
+  border-top: 6px solid #478966;/*green top border line of 6px*/
+  border-bottom: 2px solid #478966;/*green bottom border line of 2px*/
   color: #000000;
-  font-family: Roboto, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 24px;
   margin: 30px;
   padding: 30px;
@@ -259,7 +231,7 @@ blockquote {
 
 
 footer {
-  font-family: Roboto, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   font-weight: 400;
   text-align: center;
@@ -287,23 +259,10 @@ footer ul li a {
 
 /*links in footer on hover*/
 footer ul li a:hover {
-  color: #ff6600;/*orange*/
+  color: #478966;/*green*/
   text-decoration: underline;
 }
 
-
-/******************************************************
-*******************************************************
-6. Mediaqueries
-*******************************************************
-******************************************************/
-
-
-/* MEDIA QUERIES. The syntax for media queries looks like this.
-  The first part " @media (max-width: 700px) { " is setting a condition - in this case that the browser should be smaller than 500px - and when that condition is true the CSS inside gets activated. So that means that if the browser is smaller than 500 px of width then make the body background red. */
-
-@media (max-width: 700px) {
-  /* Now after that add some styles that will make the page look better at narrower widths and mobile devices.*/
   li {
     display: block;
     padding: 5px;
@@ -347,6 +306,4 @@ footer ul li a:hover {
 
   footer ul li a {
   font-size: 12px;
-}
-
 }
