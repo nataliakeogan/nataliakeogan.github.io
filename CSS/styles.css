@@ -129,7 +129,8 @@ nav {
   padding: 10px 0px 10px 0px;
   /* Top, right, bottom, left */
   width: 100%;/*Make navigation 100% width of the viewport*/
-  background: black;}
+  background: black;
+}
 
 /*Nav list of links aligned horizontal*/
 li {
@@ -137,7 +138,7 @@ li {
 
   padding: 0px 10px 0px 10px;
   /*top right bottom left or give it 0px of top space, 10 px to
-    the right, 0px to the bottom and 10px to the left.
+    the right, 0px to the bottom and 10px to the left.*/
 }
 
 /*links in nav menu*/
@@ -152,13 +153,6 @@ nav ul li a {
 
 /*links in nav on hover*/
 nav ul li a:hover {text-decoration: underline;}
-
-
-/******************************************************
-*******************************************************
-3. Main body content
-*******************************************************
-******************************************************/
 
 article {
   max-width: 700px;/*set the width of the text and other elements inside the article tag*/
@@ -222,13 +216,6 @@ blockquote {
   text-align: center;
 }
 
-
-
-/******************************************************
-*******************************************************
-4. Footer content
-*******************************************************
-******************************************************/
 
 
 footer {
